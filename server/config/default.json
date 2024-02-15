@@ -1,0 +1,7 @@
+{
+    "PORT": 9898,
+    "SERVER": "localhost",
+    "DATABASE": "blood",
+    "USER": "root",
+    "PASSWORD": "manager"
+}
