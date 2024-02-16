@@ -32,12 +32,6 @@ app.use(express.json());
 //code for tocken
 
 
-const connectionDetails = {  
-    host: config.get("SERVER"),
-    database: config.get("DATABASE"),
-    user: config.get("USER"),
-    password: config.get("PASSWORD")
-  }
 
 app.use((request, response, next)=>{
 //Common code for checking token

@@ -19,7 +19,31 @@ console.log(connectionDetails);
 //     response.end();
 // })
 
-app.get("/", (request, response)=>
+app.get("/", (request, response)=>{
+  var connection = mysql.createConnection(connectionDetails);
+  const Email = request.body.Email;
+  const Password = request.body.Password;
+  var statement = `select * from users where Email='${Email}' and Password='${Password}' `;
+
+  connection.query(statement, (error, result)=>{
+      if(error==null)
+      {
+          response.setHeader("Content-Type", "application/json");
+          response.write(JSON.stringify(result));
+          connection.end();
+          response.end();
+      }
+      else
+      {
+          response.setHeader("Content-Type", "application/json");
+           response.write(JSON.stringify(error));
+          connection.end();
+          response.end();
+      }
+  })
+});
+
+app.post("/", (request, response)=>
 {
     console.log(request.body);
 
