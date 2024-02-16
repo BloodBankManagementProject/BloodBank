@@ -43,7 +43,9 @@ const DoLogin = ()=>
 }
   return (
     <Layout>
+      <div>
             <center>
+           
                 Email : <input type="text"
                                   value={credentials.Email}
                                   name="Email"
@@ -55,9 +57,9 @@ const DoLogin = ()=>
                                   onChange={OnTextChange}/>
                 <br/>
                 <button onClick={DoLogin}>Login</button>
-
+  
             </center>
-
+      </div>
     </Layout>
   );
 };
